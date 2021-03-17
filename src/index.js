@@ -91,14 +91,17 @@ class Game extends React.Component {
         } else {
             status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
         }
-        
+
         return (
             <div className="game">
                 <div className="game-board">
-                    <Board />
+                    <Board 
+                      squares={current.squares}
+                      onClick={(i) => this.handleClick(i)}    
+                    />
                 </div>
                 <div className="game-info">
-                    <div>{/* status 8*/}</div>
+                    <div>{status}</div>
                     <ol>{/* TODO */}</ol>
                 </div>
             </div>

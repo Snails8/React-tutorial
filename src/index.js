@@ -98,10 +98,12 @@ class Game extends React.Component {
             'Go to game start';
         
             return (
-                <button onClick={() => this.jumpTo(move)}>{desc}</button>
+              <li key={move}>
+                  <button onClick={() => this.jumpTo(move)}>{desc}</button>
+              </li>  
             );    
         });
-        
+
         let status;
         if (winner) {
             status = 'Winner:' + winner;
